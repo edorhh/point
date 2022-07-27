@@ -1,7 +1,7 @@
-import "../styles/globals.css";
+import '../styles/globals.css'
 
-function PointApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
-export default PointApp;
+export default MyApp
