@@ -1,25 +1,22 @@
 import { store, persistor } from '../store/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
+import Layout from "../components/common/Layout";
+import Login from "../components/login/Login";
+import Loading from "../components/common/Loading";
 
-function PointApp({ Component, pageProps }) {
+function PointApp({ Component, pageProps, router }) {
+    const isLoginPage = (router.pathname === "/login");
     return (
         <>
             <Provider store={store}>
-                <PersistGate loading={null} persistor={persistor}>
-                    <Header />
-                    <section className="content">
-                        <div className="container">
-                            <Component {...pageProps} />
-                        </div>
-                    </section>
-                    <Footer />
+                <PersistGate loading={<Loading isDisplay={true}/>} persistor={persistor}>
+                    {!isLoginPage ? <Layout content={<Component {...pageProps} />} /> : <Login />}
                 </PersistGate>
             </Provider>
         </>
     );
 }
 
+// export default wrapper.withRedux(PointApp);
 export default PointApp;

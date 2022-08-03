@@ -10,8 +10,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    login: loginSlice.reducer,
-    test: testSlice.reducer,
+    login: loginSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

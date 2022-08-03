@@ -1,7 +1,7 @@
 export default function Header() {
     return (
         <>
-            <header>
+            <header className="header">
                 <h1 className="docTitle">
                     읽은 만큼 할인받자! 독서포인트서비스
                 </h1>
