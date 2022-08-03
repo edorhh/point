@@ -13,9 +13,9 @@ export default function Login() {
 
     useEffect(() => {
         if(isLoggedIn) {
-            if (managerAuth === 'ROLE_ADMIN1') router.push('/common/passwordexpired/main');
-            else if (managerAuth === 'ROLE_ADMIN') router.push('/pointmng/store/main');
-            else if (managerAuth === 'ROLE_ADMIN3') router.push('/pointmng/admin/main');
+            if (managerAuth === 'ROLE_ADMIN2') router.push('/common/passwordexpired/main');
+            else if (managerAuth === 'ROLE_ADMIN1') router.push('/pointmng/store/main');
+            else if (managerAuth === 'ROLE_ADMIN') router.push('/pointmng/admin/main');
         }
     }, [isLoggedIn, managerAuth, router]);
 
